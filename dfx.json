@@ -1,0 +1,33 @@
+{
+  "canisters": {
+    "backend": {
+      "main": "backend/app.mo",
+      "type": "motoko",
+      "args": "--enhanced-orthogonal-persistence"
+    },
+    "frontend": {
+      "dependencies": ["backend"],
+      "frontend": {
+        "entrypoint": "frontend/index.html"
+      },
+      "source": ["frontend/dist"],
+      "type": "assets"
+    },
+    "icp_ledger_canister": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/master/rs/src/ledger_suite/icp/index.did",
+      "wasm": "https://download.dfinity.systems/ic/current/canister-base/icp_ledger.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "ryjl3-tyaaa-aaaaa-aaaba-cai"
+        }
+      }
+    }
+  },
+  "output_env_file": ".env",
+  "defaults": {
+    "build": {
+      "packtool": "mops sources"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rev.Era-ICP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Rev.Era-ICP: Blockchain Ticket Platform</h1>
+    <div id="lang-switch">
+      <button onclick="switchLang('en')">EN</button>
+      <button onclick="switchLang('uk')">UK</button>
+    </div>
+    <button id="login-btn">Login with II</button>
+  </header>
+  <main>
+    <section id="filters">
+      <select id="city-filter"><option value="">All Cities</option></select>
+      <select id="date-filter"><option value="">All Dates</option></select>
+      <select id="category-filter"><option value="">All Categories</option></select>
+      <button onclick="searchEvents()">Search</button>
+    </section>
+    <section id="events"></section>
+    <section id="admin-panel" style="display:none;">
+      <h2>Admin Panel</h2>
+      <div id="pending-events"></div>
+      <button onclick="addEvent()">Create Event</button>
+    </section>
+  </main>
+  <div id="modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
